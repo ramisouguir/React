@@ -23,7 +23,9 @@ const FeatureCard = ({ icon, title, content, index }: Props) => (
       <h4 className="font-poppins font-semibold text-white text-[18px] leading-[23px] mb-1">
         {title}
       </h4>
-      <p className={`${styles.paragraph} text-[13px]`}>{content}</p>
+      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px] mb-1">
+        {content}
+      </p>
     </div>
   </div>
 );
@@ -42,7 +44,7 @@ const Business = () => {
           of credit cards on the market.
         </p>
 
-        <Button styles="mt-5" />
+        <Button styles="mt-5" text="Get Started" />
       </div>
 
       <div className={`${layout.sectionImg} flex-col`}>
