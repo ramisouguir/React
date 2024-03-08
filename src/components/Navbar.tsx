@@ -19,15 +19,17 @@ export const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              index === navLinks.length - 1 ? "mr-0" : "mr-10"
+            className={`${
+              window.location.href.includes("world") ? "hidden" : "block"
+            } font-poppins font-normal cursor-pointer text-[16px] mr-10
             } text-white`}
           >
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
+
         <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] ml-10 text-white`}
+          className={`font-poppins font-normal cursor-pointer text-[16px] text-white`}
         >
           <Link to="world">World</Link>
         </li>
@@ -48,16 +50,27 @@ export const Navbar = () => {
         } sm:hidden p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
       >
         <ul className="list-none flex flex-col justify-end items-center flex-1">
-          {navLinks.map((nav, index) => (
+          <li
+            className={`font-poppins font-normal cursor-pointer text-[16px] mb-5 text-white`}
+          >
+            <Link to="/">Home</Link>
+          </li>
+          {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`font-poppins font-normal cursor-pointer text-[16px] ${
-                index === navLinks.length - 1 ? "mb-0" : "mb-4"
-              } text-white`}
+              className={`${
+                window.location.href.includes("world") ? "hidden" : "block"
+              } font-poppins font-normal cursor-pointer text-[16px] mb-5 text-white`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+
+          <li
+            className={`font-poppins font-normal cursor-pointer text-[16px] mb-0 text-white`}
+          >
+            <Link to="world">World</Link>
+          </li>
         </ul>
       </div>
     </nav>
