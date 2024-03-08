@@ -24,4 +24,8 @@ module.exports = {
     },
   },
   plugins: [],
+  corePlugins: {
+    // ... other core plugins
+    normalize: true,
+  },
 };
