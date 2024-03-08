@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -10,6 +11,11 @@ export const Navbar = () => {
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+        <li
+          className={`font-poppins font-normal cursor-pointer text-[16px] mr-10 text-white`}
+        >
+          <Link to="/">Home</Link>
+        </li>
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
@@ -20,6 +26,11 @@ export const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
+        <li
+          className={`font-poppins font-normal cursor-pointer text-[16px] ml-10 text-white`}
+        >
+          <Link to="world">World</Link>
+        </li>
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
